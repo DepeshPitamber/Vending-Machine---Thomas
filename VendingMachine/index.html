@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-animate.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+<script src="Vending_Machine.js"></script>
+<link rel="stylesheet" type="text/css" href="Vending_Machine.css"/>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<head>
+    <meta charset="UTF-8">
+    <title>The Ultimate Vending Machine</title>
+    <style>
+        label
+        {
+            width: 100px;
+            display: inline-block;
+        }
+
+        input
+        {
+            width: 150px;
+            vertical-align: middle;
+        }
+
+        .coin {
+            background-color: gold;
+            height: 50px;
+            width: 50px;
+            border-radius: 100%;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div ng-app="myVendingMachine" ng-controller="myCtrl" class="w3-card-2 w3-margin"  style="max-width:650px;">
+
+        <header class="w3-container w3-light-grey w3-padding-16">
+                <h2>The Ultimate Vending Machine</h2>
+        </header>
+
+        <div class="w3-container w3-white">
+            <p class="w3-text-red">{{Welcome_Msg}}</p>
+            <div ng-repeat="x in products">
+                <input type="radio" name="productdetails" ng-click="checkoptions(products)" value="{{x.amt}}" ng-model="$parent.selectedProduct"  />
+                <label>{{x.name}}</label>
+            </div><br/>
+            <span style="color:Red">{{msg}}</span>
+        </div>
+
+        <div class="w3-container w3-light-grey w3-padding-16">
+            <div class="w3-row w3-margin-top">
+                <div>
+                    <label><strong>Coin Slot:</strong></label>
+                    <button name="InsertFive" ng-click="insertFive()" ng-disabled="disable" class="w3-button coin">R5</button>
+                    <button name="InsertTwo" ng-click="insertTwo()" ng-disabled="disable" class="w3-button coin">R2</button>
+                    <button name="insertOne" ng-click="insertOne()" ng-disabled="disable"class="w3-button coin">R1</button>
+                    <button name="insertFifty" ng-click="insertFifty()" ng-disabled="disable" class="w3-button coin">50c</button>
+                </div><br>
+                <span><strong>Coins Inserted: {{cashIn | currency: "R" : 2}}</strong></span><br><br>
+                <div class="w3-col s2">
+                    <button ng-click="Purchase()" ng-disabled="disable" class="w3-button w3-green">BUY</button>
+                </div>
+                <span style="color:Red">{{error}}</span>
+            </div>
+        </div><br>
+
+
+        <div class="w3-container w3-white">
+            <span><strong>Change Returned: {{change_returned | currency:"R" : 2}}</strong> </span><br><br>
+            <div class="w3-col s2">
+                <button ng-click="Reset()" class="w3-button w3-orange">RESET</button>
+            </div>
+        </div><br>
+    </div>
+</body>
+</html>
