@@ -1,0 +1,33 @@
+.coin {
+    background-color: gold;
+    height: 50px;
+    width: 50px;
+    border-radius: 100%;
+}
+
+label
+{
+    width: 80px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+input
+{
+    width: 150px;
+    vertical-align: middle;
+}
+
+textarea
+{
+    width: 150px;
+    height: 100px;
+    vertical-align: middle;
+}
+
+.valueItems
+{
+    display: inline-block;
+    vertical-align: middle;
+}
+

@@ -1,0 +1,32 @@
+{
+  "products": [
+    {
+      "name":"Coca Cola",
+      "amt":5.20
+    },
+    {
+      "name":"Chocolate",
+      "amt":11.40
+    },
+    {
+      "name":"Energy Drink",
+      "amt":12.60
+    },
+    {
+      "name":"Simba Chips",
+      "amt":7.90
+    },
+    {
+      "name":"Koeksister",
+      "amt":45.80
+    },
+    {
+      "name":"Peanuts",
+      "amt":9.30
+    },
+    {
+      "name":"Pop Corn",
+      "amt":16.25
+    }
+  ]
+}
